@@ -12,7 +12,9 @@
                 <input type="checkbox" id="checkbox_toggle" />
                 <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                 <div class="menu">
-                    <li>
+                    <li><a href="/">Contact Us</a></li>
+                    <li><a href="/">About</a></li>
+                    <!-- <li> -->
                         <button 
                             class="cart" 
                             @click="navigateTo('cart')"
@@ -20,7 +22,7 @@
                             Cart({{ cartItem.length }})
                         </button>
                         
-                    </li>
+                    <!-- </li> -->
                 </div>
                 </ul>
             </nav>
@@ -69,12 +71,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-.cart {
-    border: none;
-    background-color: hsl(0, 0%, 15%);
-    color: #fff;
-    font-size: 16px;
-}
-</style>

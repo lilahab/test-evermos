@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="cart" @click="addItemToCart(pd)">
+                            <button class="add-cart" @click="addItemToCart(pd)">
                                 <img src="@/assets/cart.jpeg" width="30px">
                             </button>
                         </div>

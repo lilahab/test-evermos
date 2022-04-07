@@ -17,7 +17,7 @@
                         <th>Action</th>
                       </tr>
                         <tr v-for="(pd,index) in cartItem" :key="index">
-                          <td><img :src="pd.image" width="50%" class="image-cart"/></td>
+                          <td><img :src="pd.image" class="image-cart"/></td>
                           <td>{{pd.title}}</td>
                           <td>{{pd.price}}</td>
                           <td><button class="remove-cart" @click="removeItemFromCart(pd)">Remove from cart</button></td>
@@ -50,7 +50,6 @@ export default {
 .close { 
   margin-left: 99%;
   cursor: pointer;
-  margin-right: 10px;
   font-size: 20px;
   border: none;
   background-color: #fbbe24;
@@ -62,6 +61,7 @@ td {
   padding: 10px;
 }
 .image-cart {
+  width: 100%;
   max-width: 100px;
 }
 .remove-cart {
