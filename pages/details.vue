@@ -17,7 +17,7 @@
                             class="cart" 
                             @click="navigateTo('cart')"
                         >
-                            Cart({{ cartItem.length }})
+                            Cart(0)
                         </button>
                         
                     </li>
@@ -25,53 +25,50 @@
                 </ul>
             </nav>
             </header>
-            <div v-if="pages === 'product'">
-                <Product 
-                    @addItemToCart="addItemToCart"
-                />
+        </div>
+        <div>
+            <img :src="$store.state.items.image" class="detail-image">
+            <h2 class="detail-title">{{ title }}</h2>
+            <h2 class="detail-price">Rp. {{ $store.state.items.price }}</h2>
+            <div class="detail-description">
+                <h4 class="desc">Description :</h4>
+                <p>{{ $store.state.items.description }}</p>
             </div>
-
-            <div v-if="pages === 'cart'">
-                <Cart 
-                    @removeItemFromCart = "removeItemFromCart"
-                    :cartItem = "cartItem"
-                    @navigateTo = "navigateTo"
-                    @close = "close"
-                />
+            <div>
+                <button class="cart-details">
+                    <img src="@/assets/cart.jpeg" width="30px">
+                    <span class="cart" align="center" @click="addItemToCart(pd)">Add to Cart</span>
+                </button>
+                <button class="buy-now">
+                    <span>Buy Now</span>
+                </button>
             </div>
         </div>
+        
     </div>
 </template>
-
 <script>
-export default {
-    name: "Shop",
-    data() {
-        return {
-            pages: "product",
-            cartItem: []
-        };
-    },
-    methods: {
-        addItemToCart(pd) {
-            this.cartItem.push(pd);
-        },
-        removeItemFromCart(pd) {
-            this.cartItem.splice(this.cartItem.indexOf(pd), 1);
-        },
-        navigateTo(pages) {
-            this.pages = pages;
-        },
-        close() {
-            this.pages = 'product'
-        },
-    },
 
+export default {
+//   props: ["cartItem"],
+  data() {
+    return {
+      title : '',
+      cartItem: []
+    }
+  },
+  methods: {
+    addItemToCart(pd) {
+        this.cartItem.push(pd);
+    },
+  },
+  created() {
+   this.title = this.$route.query.title
+  }
 }
 </script>
-
 <style scoped>
-.cart {
+button.cart {
     border: none;
     background-color: hsl(0, 0%, 15%);
     color: #fff;
