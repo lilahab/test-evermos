@@ -236,7 +236,7 @@
   }
   .menu li:hover {
     display: inline-block;
-    background-color:#4c9e9e;
+    background-color: var(--navbar-bg-color);
     transition: 0.3s ease;
   }
   .menu li + li {
@@ -356,6 +356,53 @@
   span.cart {
     color: white;
     margin: auto;
+  }
+
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .modal-container {
+      width: 545px;
+      margin: 0px auto;
+      border-radius: 20px !important;
+      padding: 20px 30px;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+      transition: all 0.3s ease;
+      text-align: center;
+      max-height: calc(100vh - 210px);
+      overflow-y: auto;
+  }
+
+  .modal-body {
+      margin: 20px 0; 
+  }
+
+  .modal-enter {
+      opacity: 0;
+  }
+
+  .modal-leave-active {
+      opacity: 0;
+  }
+
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+
+  .modal-fade-enter,
+  .modal-fade-leave-to {
+      opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+      transition: opacity .5s ease;
   }
 
 }
