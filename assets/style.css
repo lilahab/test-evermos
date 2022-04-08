@@ -529,7 +529,7 @@
 
   button.cart {
     position: relative;
-    bottom: 0;
+    bottom: 2.5vh;
     left: 1vw;
     width: 120px;
     height: 40px;
