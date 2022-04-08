@@ -238,7 +238,7 @@
   }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .menu { 
     display:none;
     position: absolute;
@@ -330,7 +330,7 @@
   }
 
   .detail-image {
-    margin-left: 5vw;
+    margin-left: 3vw;
     margin-top: 10vh;
     width: 300px;
     height: 400px;
@@ -362,27 +362,25 @@
   .cart-details {
     background-color: #fbbe24;
     border: none;
-    width: 50%;
+    width: 25%;
     height: 50px;
     border-radius: 0;
-    position:absolute;
-    bottom:0;
-    left: -4%;
     font-size: 25px;
     float: left;
+    position: sticky;
+    margin-left: 0;
   }
 
   .buy-now {
     background-color: #fbbe24;
     border: none;
-    width: 50%;
+    width: 25%;
     height: 50px;
     border-radius: 0;
     font-size: 25px;
-    position:absolute;
-    bottom: 0;
-    right: 0;
+    left: 65%;
     color: white;
+    position: sticky;
   }
 
   span.cart {
@@ -436,6 +434,204 @@
   .modal-fade-leave-active {
       transition: opacity .5s ease;
   }
-
 }
 
+@media screen and (max-width: 480px) {
+  .menu { 
+    display:none;
+    position: absolute;
+    background-color:#fbbe24;
+    padding-top: 10px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .menu li {
+    padding: 0px 5px 0px 14px;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: var(--navbar-bg-color);
+    transition: 0.3s ease;
+  }
+  .menu li + li {
+    margin-top: 10px;
+  }
+  input[type=checkbox]:checked ~ .menu{
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  } 
+  .banner img{
+    margin-top: 6vh;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 150px;
+    height: 285px;
+    display: flex;
+    float: left;
+    margin-top: 2vh;
+    margin-left: 8vw;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .content {
+    padding: 2px 10px;
+  }
+
+  img.products {
+    width: 120px;
+    height: 160px;
+  }
+
+  h4 {
+    font-size: 11px;
+    padding-bottom: 20%;
+  }
+
+  p {
+    font-size: 11px;
+    padding-right: 5px;
+  }
+
+  button.add-cart {
+    background-color: #fbbe24;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 49px;
+    left: 1vw;
+  }
+
+  button.cart {
+    border: none;
+    background-color: hsl(0, 0%, 15%);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 0;
+    left: 1vw;
+    width: 120px;
+    height: 40px;
+  }
+
+  .detail-image {
+    margin-left: 10vw;
+    margin-top: 13vh;
+    width: 300px;
+    height: 400px;
+    float: left;
+  }
+
+  .detail-title {
+    padding-left: 11%;
+    text-align: left;
+  }
+
+  .detail-price {
+    padding-left:  11%;
+    color: #fbbe24;
+  }
+
+  .detail-description {
+    padding-left: 11%;
+  }
+
+  .detail-description p {
+    font-size: 14px;
+    text-align: justify;
+    max-width: 77vw;
+  }
+  .desc{
+    padding-bottom: 0;
+  }
+  .cart-details {
+    background-color: #fbbe24;
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    font-size: 25px;
+    float: left;
+    position: sticky;
+    margin-left: 0;
+  }
+
+  .buy-now {
+    background-color: #fbbe24;
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    font-size: 25px;
+    left: 100%;
+    float: right;
+    color: white;
+    position: sticky;
+    margin-top: 0;
+  }
+
+  span.cart {
+    color: white;
+    margin: auto;
+  }
+
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .modal-container {
+      width: 340px;
+      margin: 20px auto;
+      border-radius: 20px !important;
+      padding: 20px 30px;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+      transition: all 0.3s ease;
+      text-align: center;
+      max-height: calc(100vh - 210px);
+      overflow-y: auto;
+  }
+
+  .modal-body {
+      margin: 20px 0; 
+  }
+
+  .modal-enter {
+      opacity: 0;
+  }
+
+  .modal-leave-active {
+      opacity: 0;
+  }
+
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+
+  .modal-fade-enter,
+  .modal-fade-leave-to {
+      opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+      transition: opacity .5s ease;
+  }
+}

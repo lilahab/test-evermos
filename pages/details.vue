@@ -19,7 +19,7 @@
                             class="cart" 
                             @click="navigateTo('cart')"
                         >
-                            Cart(0)
+                            Cart({{cartItem.length}})
                         </button>
                         
                     </li>
@@ -29,12 +29,12 @@
             </header>
         </div>
         <div>
-            <img :src="$store.state.items.image" class="detail-image">
+            <img :src="items.image" class="detail-image">
             <h2 class="detail-title">{{ title }}</h2>
-            <h2 class="detail-price">Rp. {{ $store.state.items.price }}</h2>
+            <h2 class="detail-price">Rp. {{ items.price }}</h2>
             <div class="detail-description">
                 <h4 class="desc">Description :</h4>
-                <p>{{ $store.state.items.description }}</p>
+                <p>{{ items.description }}</p>
             </div>
             <div>
                 <button class="cart-details">
@@ -46,22 +46,37 @@
                 </button>
             </div>
         </div>
+         <div v-if="pages === 'cart'">
+            <Cart 
+                @removeItemFromCart = "removeItemFromCart"
+                :cartItem = "cartItem"
+                @navigateTo = "navigateTo"
+                @close = "close"
+            />
+        </div>
         
     </div>
 </template>
 <script>
 
 export default {
-//   props: ["cartItem"],
   data() {
     return {
       title : '',
-      cartItem: []
+      cartItem: [],
+      pages: 'details',
+      items: this.$store.state.items
     }
   },
   methods: {
-    addItemToCart(pd) {
-        this.cartItem.push(pd);
+    addItemToCart(items) {
+        this.cartItem.push(items);
+    },
+    navigateTo(pages) {
+        this.pages = pages;
+    },
+    close() {
+        this.pages = 'details'
     },
   },
   created() {
