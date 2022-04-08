@@ -16,7 +16,7 @@
                     <li><a href="/">About</a></li>
                     <!-- <li> -->
                         <button 
-                            class="cart" 
+                            class="cart-button" 
                             @click="navigateTo('cart')"
                         >
                             Cart({{ cartItem.length }})

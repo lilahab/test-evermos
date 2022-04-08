@@ -100,6 +100,17 @@
     margin-top: 20px;
   }
 
+  button.cart-button {
+    border: none;
+    background-color: #fbbe24;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    bottom: 0;
+    left: 1vw;
+    position: relative;
+  }
+
   button.cart {
     border: none;
     background-color: #fbbe24;
