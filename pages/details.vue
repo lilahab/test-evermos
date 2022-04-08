@@ -35,6 +35,10 @@
             <div class="detail-description">
                 <h4 class="desc">Description :</h4>
                 <p>{{ items.description }}</p>
+                <h4 class="desc">Variant :</h4> 
+                <div v-for="variant in items.variant" :key="variant">
+                    <button class="detail-variant"> {{ variant }} </button>
+                </div>
             </div>
             <div>
                 <button class="cart-details">
@@ -91,4 +95,5 @@ button.cart {
     color: #fff;
     font-size: 16px;
 }
+
 </style>

@@ -3,6 +3,19 @@
         <div class="banner">
             <img src="@/assets/img2.jpg" width="100%">
         </div>
+        <div id="slider">
+        <transition-group tag="div" :name="transitionName" class="slides-group">
+            <div v-if="show" :key="current" class="slide" :class="slides[current].className">
+            <p>I'm {{slides[current].className}}!</p>
+            </div>
+        </transition-group>
+        <div class="btn btn-prev" aria-label="Previous slide" @click="slide(-1)">
+            &#10094;
+        </div>
+        <div class="btn btn-next" aria-label="Next slide" @click="slide(1)">
+            &#10095;
+        </div>
+        </div>
         <div class="product">
             <div v-for="(pd, index) in products" :key="index">
                 <div class="card">
@@ -15,7 +28,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="add-cart" @click="addItemToCart(pd)">
+                            <button class="cart" @click="addItemToCart(pd)">
                                 <img src="@/assets/cart.jpeg" width="30px">
                             </button>
                         </div>
