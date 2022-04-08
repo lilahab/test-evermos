@@ -10,7 +10,7 @@
                         <div>
                             <img class="products" v-bind:src="pd.image" alt="Avatar" width="100%" @click="clickedProduct(pd)">
                             <div @click="clickedProduct(pd)">
-                                <p>{{ pd.title | truncate(30) }}</p> 
+                                <p>{{ pd.title | truncate(18) }}</p> 
                                 <h4>Rp. {{ pd.price }}</h4> 
                             </div>
                         </div>
